@@ -4,7 +4,6 @@ using Microsoft.IdentityModel.Tokens;
 
 var builder = WebApplication.CreateBuilder(args);
 
-
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 .AddJwtBearer(options =>
 {
@@ -16,13 +15,9 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     };
 });
 
-
 builder.Services.AddControllers();
 
 var app = builder.Build();
-
-app.UseHttpsRedirection();
-app.UseStaticFiles();
 
 app.UseRouting();
 

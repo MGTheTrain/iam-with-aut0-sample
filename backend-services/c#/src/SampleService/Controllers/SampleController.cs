@@ -6,7 +6,6 @@ namespace SampleService.Controllers
 {
     [ApiController]
     [Route("api/v1/sas")]
-    [Authorize] 
     public class SampleController : ControllerBase
     {
         private readonly ILogger<SampleController> _logger;
@@ -26,6 +25,7 @@ namespace SampleService.Controllers
         }
 
         [HttpGet("private")]
+        [Authorize(Roles = "Admin")] 
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         [ProducesResponseType(StatusCodes.Status403Forbidden)]

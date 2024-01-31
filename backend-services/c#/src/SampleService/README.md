@@ -16,6 +16,8 @@ Go to your configured API in the Auth0 portal and select the `Test` button.
 
 ![Auth0 portal view with test button](./images/auth0-portal-view001.PNG)
 
+Following curl request should return a JSON response body including a bearer token:
+
 ```sh
 curl --request POST \
   --url https://<your Auth0 tenant domain>.us.auth0.com/oauth/token \

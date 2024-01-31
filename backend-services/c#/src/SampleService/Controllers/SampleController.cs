@@ -18,6 +18,7 @@ namespace SampleService.Controllers
 
         [HttpGet("public")]
         [AllowAnonymous] 
+        [ProducesResponseType(StatusCodes.Status200OK)]
         public IActionResult PublicEndpoint()
         {
             _logger.LogInformation("Public endpoint accessed");
@@ -25,6 +26,9 @@ namespace SampleService.Controllers
         }
 
         [HttpGet("private")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        [ProducesResponseType(StatusCodes.Status403Forbidden)]
         public IActionResult PrivateEndpoint()
         {
             _logger.LogInformation("Private endpoint accessed");

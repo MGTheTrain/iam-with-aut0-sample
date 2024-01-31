@@ -25,6 +25,7 @@ namespace SampleService.Controllers
         }
 
         [HttpGet("rbac")]
+        [Authorize(Roles = "Admin")] 
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         [ProducesResponseType(StatusCodes.Status403Forbidden)]

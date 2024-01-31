@@ -31,7 +31,7 @@ namespace SampleService.Controllers
         public IActionResult PrivateEndpointConsideringRBAC()
         {
             _logger.LogInformation("Private endpoint accessed");
-            return Ok("This is a private endpoint");
+            return Ok("This is a private endpoint which consider RBAC");
         }
 
         [HttpGet("private")]

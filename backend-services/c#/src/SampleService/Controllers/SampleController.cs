@@ -6,7 +6,7 @@ namespace SampleService.Controllers
 {
     [ApiController]
     [Route("api/v1/sas")]
-    [Authorize] // Apply authorization globally for the entire controller
+    [Authorize] 
     public class SampleController : ControllerBase
     {
         private readonly ILogger<SampleController> _logger;

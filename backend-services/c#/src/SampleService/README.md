@@ -4,7 +4,7 @@
 
 [Install latest dotnet SDK](https://dotnet.microsoft.com/en-us/download) for your target platform and CPU arch.
 
-## Run bacend service with dotnet
+## Run backend service with dotnet cli tool
 
 ```sh
 dotnet run

@@ -27,7 +27,7 @@ curl --request POST \
 
 ## Test endpoints trough Swagger UI
 
-Click on the `Authorize button` shown in following image in the Swagger UI and set the Bearer token:
+Click the `Authorize button` displayed in the Swagger UI depicted in the following image and set the Bearer token:
 
 ![Swagger UI View 2](./images/Swagger-UI-View002.PNG)
 

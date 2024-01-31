@@ -9,7 +9,7 @@
 
 ## Summary
 
-A repository exemplifying the integration of OIDC and OAuth 2.0 flows into backend services, single-page applications (SPAs), and mobile applications.
+Repository demonstrating OIDC and OAuth 2.0 flows with backend services, single-page applications (SPAs), and mobile applications, utilizing Auth0 as the central Identity and Access Management (IAM) solution.
 
 ## References
 
@@ -17,4 +17,6 @@ A repository exemplifying the integration of OIDC and OAuth 2.0 flows into backe
 
 ## Getting started
 
-TBD
+### Backend Services
+
+

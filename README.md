@@ -17,6 +17,20 @@ Repository demonstrating OIDC and OAuth 2.0 flows with backend services, single-
 
 ## Getting started
 
-TBD
+### Perquisite
+
+You must create an **Auth0 account**, and you have the option to choose the [free trial version](https://auth0.com/pricing).
+
+### OAuth 2.0 flows in web backend services
+
+TBD 
+
+### OIDC flows in SPAs
+
+TBD 
+
+### OIDC flows in mobile apps
+
+TBD 
 
 

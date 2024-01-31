@@ -2,7 +2,7 @@
 
 ## Prerequisite
 
-[Install latest dotnet SDK](https://dotnet.microsoft.com/en-us/download) for your target platform and CPU arch.
+[Install latest dotnet SDK](https://dotnet.microsoft.com/en-us/download) for your target platform.
 
 ## Run backend service with dotnet cli tool
 

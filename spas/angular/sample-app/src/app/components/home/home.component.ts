@@ -7,10 +7,10 @@ import { Component } from '@angular/core';
   styleUrl: './home.component.scss'
 })
 export class HomeComponent {
-  // constructor(private auth: AuthService) {}
+  constructor(private auth: AuthService) {}
 
   login() {
-    // this.auth.loginWithRedirect();
+    this.auth.loginWithRedirect();
   }
   title: String = 'sample-app';
 }

@@ -4,6 +4,7 @@ import { AppComponent } from './app.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { HomeComponent } from './components/home/home.component';
+import { AuthModule } from '@auth0/auth0-angular';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,15 @@ import { HomeComponent } from './components/home/home.component';
   ],
   imports: [
     BrowserModule,
-    RoutingModule],
+    RoutingModule,
+    AuthModule.forRoot({
+      domain: '{yourDomain}',
+      clientId: '{yourClientId}',
+      authorizationParams: {
+        redirect_uri: window.location.origin
+      }
+    }),
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

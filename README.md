@@ -19,7 +19,7 @@ Repository demonstrating OIDC and OAuth 2.0 flows with backend services, single-
 
 ### Prerequisite
 
-You must create an **Auth0 account**, and you have the option to choose the [free trial version](https://auth0.com/pricing).
+You must create an **Auth0 account**, and you have the option to choose the [free plan](https://auth0.com/pricing).
 
 ### OAuth 2.0 flows in web backend services
 

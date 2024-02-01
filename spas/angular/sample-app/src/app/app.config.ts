@@ -5,6 +5,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { HomeComponent } from './components/home/home.component';
 import { AuthModule } from '@auth0/auth0-angular';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -16,8 +17,8 @@ import { AuthModule } from '@auth0/auth0-angular';
     BrowserModule,
     RoutingModule,
     AuthModule.forRoot({
-      domain: '{yourDomain}',
-      clientId: '{yourClientId}',
+      domain: environment.auth0.domain,  
+      clientId: environment.auth0.clientId,  
       authorizationParams: {
         redirect_uri: window.location.origin
       }

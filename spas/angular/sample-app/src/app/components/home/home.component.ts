@@ -11,7 +11,7 @@ import { CommonModule } from '@angular/common';
 })
 export class HomeComponent {
   isAuthenticated: boolean = false;
-  accessToken: string | null = null; // Variable to store the ID token
+  accessToken: string | null = null; 
 
   constructor(public auth: AuthService) {}
 

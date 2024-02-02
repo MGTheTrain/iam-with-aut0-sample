@@ -1,28 +1,37 @@
 import { AuthService } from '@auth0/auth0-angular';
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-home',
-  styleUrls: ['./home.component.scss'],
+  standalone: true,
+  imports: [CommonModule],
   templateUrl: './home.component.html',
+  styleUrl: './home.component.scss'
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent {
   isAuthenticated: boolean = false;
   accessToken: string | null = null; // Variable to store the ID token
 
   constructor(public auth: AuthService) {}
 
-  async ngOnInit(): Promise<void> {
-    this.isAuthenticated = (await this.auth.isAuthenticated$.toPromise())!;
-    if (this.isAuthenticated) {
-      try {
-        this.accessToken = (await this.auth.getAccessTokenSilently().toPromise())!;
-        console.log(this.accessToken);
-      } catch (error) {
-        console.error('Error getting access token:', error);
+  ngOnInit(): void {
+    this.auth.isAuthenticated$.subscribe((isAuthenticated) => {
+      this.isAuthenticated = isAuthenticated;
+
+      if (isAuthenticated) {
+        this.auth.getAccessTokenSilently().subscribe(
+          (accessToken: string) => {
+            // encrypted JWE (JSON Web Encryption) token
+            this.accessToken = accessToken;
+            console.log(this.accessToken)
+          },
+          (error) => {
+            console.error('Error getting access token:', error);
+          }
+        );
       }
-    }
+    });
   }
 
   login() {
@@ -32,6 +41,5 @@ export class HomeComponent implements OnInit {
   logout() {
     this.auth.logout();
   }
-
-  title: string = 'sample-app';
+  title: String = 'sample-app';
 }

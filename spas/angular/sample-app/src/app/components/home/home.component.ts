@@ -16,7 +16,7 @@ export class HomeComponent {
   constructor(public auth: AuthService) {}
 
   ngOnInit(): void {
-    this.auth.isAuthenticated$.subscribe((isAuthenticated) => {
+    this.auth.isAuthenticated$.subscribe((isAuthenticated: boolean) => {
       this.isAuthenticated = isAuthenticated;
 
       if (isAuthenticated) {

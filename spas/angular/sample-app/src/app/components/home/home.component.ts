@@ -12,6 +12,7 @@ import { CommonModule } from '@angular/common';
 export class HomeComponent {
   isAuthenticated: boolean = false;
   accessToken: string | null = null; 
+  title: String = 'sample-app';
 
   constructor(public auth: AuthService) {}
 
@@ -41,5 +42,4 @@ export class HomeComponent {
   logout() {
     this.auth.logout();
   }
-  title: String = 'sample-app';
 }

@@ -9,7 +9,7 @@
 
 ### Auth0 objects setup
 
-Refer to [section `Auth0 objects setup´ in Angular SPA README.md](../../angular/sample-app/README.md).
+Refer to [section `Auth0 objects setup` in Angular SPA README.md](../../angular/sample-app/README.md).
 
 ## Project setup
 ```

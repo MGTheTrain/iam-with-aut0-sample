@@ -25,24 +25,24 @@ namespace SampleService.Controllers
         }
 
         [HttpGet("rbac")]
-        [Authorize(Roles = "Admin")] 
+        [Authorize("admin:permission")] 
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         [ProducesResponseType(StatusCodes.Status403Forbidden)]
         public IActionResult PrivateEndpointConsideringRBAC()
         {
-            _logger.LogInformation("Private endpoint accessed");
-            return Ok("This is a private endpoint which consider RBAC");
+            _logger.LogInformation("Private endpoint only considering JWTs from and audience for authentication and RBAC");
+            return Ok("This is a private endpoint only considering JWTs from and audience for authentication and RBAC");
         }
 
-        [HttpGet("private")]
+        [HttpGet("auth")]
         [Authorize] 
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         public IActionResult PrivateEndpoint()
         {
-            _logger.LogInformation("Private endpoint accessed");
-            return Ok("This is a private endpoint");
+            _logger.LogInformation("Private endpoint only considering JWTs from and audience for authentication");
+            return Ok("This is a private endpoint only considering JWTs from and audience for authentication");
         }
     }
 }

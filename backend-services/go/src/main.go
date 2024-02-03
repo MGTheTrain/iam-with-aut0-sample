@@ -19,6 +19,11 @@ import (
 // @termsOfService http://localhost:3010/swagger/doc.json
 // @host localhost:3010
 // @BasePath /api/v1/sas
+// @schemes http
+// @securityDefinitions.apiKey ApiKeyAuth
+// @in header
+// @name Authorization
+// @swagger:meta
 func main() {
 	if err := godotenv.Load(); err != nil {
 		log.Fatalf("Error loading the .env file: %v", err)

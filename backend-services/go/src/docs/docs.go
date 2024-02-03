@@ -70,6 +70,13 @@ const docTemplate = `{
                 }
             }
         }
+    },
+    "securityDefinitions": {
+        "ApiKeyAuth": {
+            "type": "apiKey",
+            "name": "Authorization",
+            "in": "header"
+        }
     }
 }`
 
@@ -78,7 +85,7 @@ var SwaggerInfo = &swag.Spec{
 	Version:          "1.0",
 	Host:             "localhost:3010",
 	BasePath:         "/api/v1/sas",
-	Schemes:          []string{},
+	Schemes:          []string{"http"},
 	Title:            "Simple Service API",
 	Description:      "Simple Service API sample",
 	InfoInstanceName: "swagger",

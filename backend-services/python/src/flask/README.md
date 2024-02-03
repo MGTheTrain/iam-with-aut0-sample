@@ -1,4 +1,4 @@
-# sample-service - Python Flask backend service utilizing Auth0 pip packages
+# sample-service - Python Flask backend service utilizing Authlib pip packages
 
 ## Prerequisite
 
@@ -12,4 +12,6 @@ python app.py
 ```
 
 Explore the Swagger Web UI in a browser of your preference by entering: `http://localhost:5000/apidocs`
+
+**NOTE**: RBAC is not yet working. The [validator.py](./validator.py) needs to be refined in that permissions are properly checked.
 

@@ -35,9 +35,17 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ![Assign Auth0 API permissions to roles](./images/assign-api-permissions-to-roles.PNG)
 
+6. Assign roles to users
+
+![Assign roles to user](./images/assign-roles-to-user.PNG)
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+
+### Sample Auth0 JWT from SPA in console logs
+
+![Sample jwt from spa in console logs](./images/sample-jwt-from-spa-in-console-logs.PNG)
 
 ## Code scaffolding
 

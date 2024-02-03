@@ -27,7 +27,8 @@ You must create an **Auth0 account**, and you have the option to choose the [fre
 
 ### OIDC flows in SPAs
 
-- [SampleApp - OIDC flowd in SPAs utilizing Auth0 npm packages](./spas/angular/sample-app/README.md)
+- [Angular SampleApp - OIDC flow in SPAs utilizing Auth0 npm packages](./spas/angular/sample-app/README.md)
+- [Vue sample-app - OIDC flow in SPAs utilizing Auth0 npm packages](./spas/vue/sample-app/README.md)
 
 ### OIDC flows in mobile apps
 

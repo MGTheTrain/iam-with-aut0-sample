@@ -1,4 +1,4 @@
-# sample-app
+# Vue sample-app - OIDC flow in SPAs utilizing Auth0 npm packages
 
 ## Prerequisite
 

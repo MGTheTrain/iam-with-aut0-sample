@@ -43,7 +43,7 @@ Set Bearer token from **locally running Angular application**:
 
 1. Valid bearer token from audience **https://quickstart/api** provided on `api/v1/sas/auth` endpoint returns a status code of **200 - OK**
 
-![200 response](./images/200-response-auth-endpoint)
+![200 response](./images/200-response-auth-endpoint.PNG)
 
 2. Valid bearer token from audience **https://quickstart/api** without correct user role permissions provided on `api/v1/sas/rbac` endpoint returns a status code of **403 - Forbidden**
 

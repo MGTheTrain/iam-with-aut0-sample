@@ -23,7 +23,6 @@ export class HomeComponent {
       if (isAuthenticated) {
         this.auth.getAccessTokenSilently().subscribe(
           (accessToken: string) => {
-            // JWE (JSON Web Encryption) token
             this.accessToken = accessToken;
             console.log(this.accessToken)
           },

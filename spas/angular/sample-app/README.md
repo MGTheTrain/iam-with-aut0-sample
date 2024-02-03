@@ -4,8 +4,36 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Prerequisite
 
+### Installation
+
 - Install node.js via [package manager](https://nodejs.org/en/download/package-manager) or [download and run installer executables](https://nodejs.org/en) for your target platform
 - Install Angular cli: `npm install -g @angular/cli`
+
+### Auth0 objects setup
+
+0. Create in Auth0 an SPA, e.g. `sample-app`
+
+![Create Auth0 application](./images/create-auth0-application.PNG)
+
+1. Configure URIs
+
+![Set Auth0 application URIs](./images/set-application-uris.PNG)
+
+2. Create in Auth0 an API, e.g. `sample-asp-net-core-service`
+
+![Create Auth0 API](./images/create-auth0-api.PNG)
+
+3. Set permissions for API
+
+![Set permissions for API](./images/set-permissions-for-api.PNG)
+
+4. Create roles in `User Managemenet` view
+
+![Create Roles](./images/create-roles.PNG)
+
+5. Assign permissions for API to roles 
+
+![Assign Auth0 API permissions to roles](./images/assign-api-permissions-to-roles.PNG)
 
 ## Development server
 

@@ -37,18 +37,18 @@ Set the Bearer token retrieved from the **locally running Angular application** 
 
 ### Typical HTTP responses
 
-0. No bearer token from audience **https://quickstart/api** provided on `api/v1/sas/auth` endpoint returns a status code of **401 - Unauthorized**:
+No bearer token from audience **https://quickstart/api** provided on `api/v1/sas/auth` endpoint returns a status code of **401 - Unauthorized**:
 
 ![401 response](./images/401-response.PNG)
 
-1. Valid bearer token from audience **https://quickstart/api** provided on `api/v1/sas/auth` endpoint returns a status code of **200 - OK**:
+Valid bearer token from audience **https://quickstart/api** provided on `api/v1/sas/auth` endpoint returns a status code of **200 - OK**:
 
 ![200 response](./images/200-response-auth-endpoint.PNG)
 
-2. Valid bearer token from audience **https://quickstart/api without correct user role permissions** provided on `api/v1/sas/rbac` endpoint returns a status code of **403 - Forbidden**:
+Valid bearer token from audience **https://quickstart/api without correct user role permissions** provided on `api/v1/sas/rbac` endpoint returns a status code of **403 - Forbidden**:
 
 ![403 response](./images/403-response.PNG)
 
-3. Valid bearer token from audience **https://quickstart/api with correct user role permissions** provided on `api/v1/sas/rbac` endpoint returns a status code of **200 - OK**:
+Valid bearer token from audience **https://quickstart/api with correct user role permissions** provided on `api/v1/sas/rbac` endpoint returns a status code of **200 - OK**:
 
 ![200 response](./images/200-response-rbac-endpoint.PNG)

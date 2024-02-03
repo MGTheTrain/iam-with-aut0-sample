@@ -51,4 +51,4 @@ Set Bearer token from **locally running Angular application**:
 
 3. Valid bearer token from audience **https://quickstart/api** with correct user role permissions provided on `api/v1/sas/rbac` endpoint returns a status code of **200 - OK**
 
-![200 response](./images/200-response-rbac-endpoint)
+![200 response](./images/200-response-rbac-endpoint.PNG)

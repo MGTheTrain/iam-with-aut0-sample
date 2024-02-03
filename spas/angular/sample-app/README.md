@@ -2,6 +2,12 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.1.2.
 
+## References
+
+- [Angular: Login](https://auth0.com/docs/quickstart/spa/angular/01-login)
+- [Angular: Call an API](https://auth0.com/docs/quickstart/spa/angular/02-calling-an-api)
+- [Hello World Full-Stack Security:Angular/TypeScript + Golang Standard Library/Golang](https://developer.auth0.com/resources/code-samples/full-stack/hello-world/basic-role-based-access-control/spa/angular-typescript/standard-library-golang)
+
 ## Prerequisite
 
 ### Installation

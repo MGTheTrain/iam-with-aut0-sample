@@ -1,4 +1,4 @@
-# SampleService
+# SampleService - C# ASP .NET Core backend service utilizing Auth0 nuget packages
 
 ## Prerequisite
 

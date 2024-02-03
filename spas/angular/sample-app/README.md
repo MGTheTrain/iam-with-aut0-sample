@@ -1,4 +1,4 @@
-# SampleApp
+# SampleApp - OIDC flowd in SPAs utilizing Auth0 npm packages
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.1.2.
 

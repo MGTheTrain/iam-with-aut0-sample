@@ -21,13 +21,13 @@ Repository demonstrating OIDC and OAuth 2.0 flows with backend services, single-
 
 You must create an **Auth0 account**, and you have the option to choose the [free plan](https://auth0.com/pricing).
 
-### OAuth 2.0 flows in web backend services
+### Authentication and RBAC in web backend services
 
-TBD 
+- [SampleService - C# ASP .NET Core backend service utilizing Auth0 nuget packages](./backend-services/c#/src/SampleService/README.md)
 
 ### OIDC flows in SPAs
 
-TBD 
+- [SampleApp - OIDC flowd in SPAs utilizing Auth0 npm packages](./spas/angular/sample-app/README.md)
 
 ### OIDC flows in mobile apps
 

@@ -4,7 +4,7 @@ from auth_middleware import VerifyToken
 app = FastAPI()
 auth = VerifyToken()
 
-@app.get("/api/sas/v1/public")
+@app.get("/api/v1/sas/public")
 def public():
     """No access token required."""
     response = (
@@ -14,7 +14,7 @@ def public():
     return {"message": response}
 
 
-@app.get("/api/sas/v1/auth")
+@app.get("/api/v1/sas/auth")
 def private(auth_result: str = Security(auth.verify)):
     """A valid access token is required."""
     response = (
@@ -23,7 +23,7 @@ def private(auth_result: str = Security(auth.verify)):
     )
     return {"message": response}
 
-@app.get("/api/sas/v1/rbac")
+@app.get("/api/v1/sas/rbac")
 def private_with_rbac(auth_result: str = Security(auth.verify, scopes=['admin:permissions'])):
     """A valid access token and user role permissions are required."""
     response = (

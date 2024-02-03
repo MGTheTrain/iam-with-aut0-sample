@@ -23,7 +23,6 @@ import (
 // @securityDefinitions.apiKey ApiKeyAuth
 // @in header
 // @name Authorization
-// @swagger:meta
 func main() {
 	if err := godotenv.Load(); err != nil {
 		log.Fatalf("Error loading the .env file: %v", err)

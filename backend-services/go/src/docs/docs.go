@@ -18,6 +18,11 @@ const docTemplate = `{
     "paths": {
         "/auth": {
             "get": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
                 "description": "Hello from a private endpoint! You need to be authenticated to see this.",
                 "produces": [
                     "application/json"
@@ -36,6 +41,11 @@ const docTemplate = `{
         },
         "/public": {
             "get": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
                 "description": "This route is always accessible.",
                 "produces": [
                     "application/json"
@@ -54,6 +64,11 @@ const docTemplate = `{
         },
         "/rbac": {
             "get": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
                 "description": "Hello from a private RBAC restricted endpoint! You need the read:messages scope to see this.",
                 "produces": [
                     "application/json"

@@ -47,6 +47,10 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The appli
 
 ![Sample jwt from spa in console logs](./images/sample-jwt-from-spa-in-console-logs.PNG)
 
+Check the JWT in [jwt.oi](https://jwt.io/):
+
+![Check token in jwt.io](./images/check-token-in-jwt-io.PNG)
+
 ## Code scaffolding
 
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.

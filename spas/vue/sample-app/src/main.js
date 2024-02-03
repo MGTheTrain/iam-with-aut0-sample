@@ -5,16 +5,16 @@ import router from './router';
 
 const app = createApp(App);
 
-app.use(
-  createAuth0({
-    domain: 'dev-d81cx3ar5jc0hn2z.us.auth0.com', // Auth0 **application** specific value
-    clientId: 'N7nDGcMjEwUSSn1RZjhSTPk59zUfWThK', // Auth0 **application** specific value
-    authorizationParams: {
-      redirect_uri: window.location.origin,
-      audience: 'https://quickstart/api', // Auth0 **API** specific value
-    }
-  })
-);
+const auth0Config = {
+  domain: process.env.VUE_APP_AUTH0_DOMAIN,
+  clientId: process.env.VUE_APP_AUTH0_CLIENT_ID,
+  authorizationParams: {
+    redirect_uri: window.location.origin,
+    audience: process.env.VUE_APP_AUTH0_AUDIENCE,
+  },
+};
+const auth0 = createAuth0(auth0Config);
+app.use(auth0);
 app.use(router);
 
 app.mount('#app');

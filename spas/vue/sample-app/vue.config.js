@@ -1,4 +1,10 @@
-const { defineConfig } = require('@vue/cli-service')
-module.exports = defineConfig({
-  transpileDependencies: true
-})
+const dotenv = require('dotenv');
+dotenv.config();
+
+module.exports = {
+  pluginOptions: {
+    dotenv: {
+      path: '.env',
+    },
+  },
+};

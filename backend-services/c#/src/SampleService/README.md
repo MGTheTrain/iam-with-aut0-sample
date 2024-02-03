@@ -27,28 +27,28 @@ curl --request POST \
 
 ## Test endpoints trough Swagger UI considering RBAC
 
-Click the `Authorize button` displayed in the Swagger UI depicted in the following image and set the Bearer token retrieved from the **locally running Angular application** ([Checkout README.md](../../../../spas/angular/sample-app/README.md). Essentialy `cd ../../../../spas/angular/sample-app && ng run && cd -`). 
+Click the `Authorize button` displayed in the Swagger UI depicted in the following image: 
 
 ![Click on the swagger UI authorization button](./images/swagger-ui-authorization-button.PNG)
 
-Set Bearer token from **locally running Angular application**:
+Set the Bearer token retrieved from the **locally running Angular application** ([Checkout README.md](../../../../spas/angular/sample-app/README.md). Essentialy `cd ../../../../spas/angular/sample-app && ng run && cd -`) in Swagger UI:
 
 ![Set bearer token retrieved from ](./images/set-bearer-token.PNG)
 
 ### Typical HTTP responses
 
-0. No bearer token from audience **https://quickstart/api** provided on `api/v1/sas/auth` endpoint returns a status code of **401 - Unauthorized**
+0. No bearer token from audience **https://quickstart/api** provided on `api/v1/sas/auth` endpoint returns a status code of **401 - Unauthorized**:
 
 ![401 response](./images/401-response.PNG)
 
-1. Valid bearer token from audience **https://quickstart/api** provided on `api/v1/sas/auth` endpoint returns a status code of **200 - OK**
+1. Valid bearer token from audience **https://quickstart/api** provided on `api/v1/sas/auth` endpoint returns a status code of **200 - OK**:
 
 ![200 response](./images/200-response-auth-endpoint.PNG)
 
-2. Valid bearer token from audience **https://quickstart/api** without correct user role permissions provided on `api/v1/sas/rbac` endpoint returns a status code of **403 - Forbidden**
+2. Valid bearer token from audience **https://quickstart/api without correct user role permissions** provided on `api/v1/sas/rbac` endpoint returns a status code of **403 - Forbidden**:
 
 ![403 response](./images/403-response.PNG)
 
-3. Valid bearer token from audience **https://quickstart/api** with correct user role permissions provided on `api/v1/sas/rbac` endpoint returns a status code of **200 - OK**
+3. Valid bearer token from audience **https://quickstart/api with correct user role permissions** provided on `api/v1/sas/rbac` endpoint returns a status code of **200 - OK**:
 
 ![200 response](./images/200-response-rbac-endpoint.PNG)

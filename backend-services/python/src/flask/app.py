@@ -89,7 +89,7 @@ def private():
     return {"message": response}
 
 @app.route("/api/v1/sas/rbac")
-@require_auth("admin:permissions")
+@require_auth("admin:permission")
 def private_with_rbac():
     """
     A valid access token and user role permissions are required.

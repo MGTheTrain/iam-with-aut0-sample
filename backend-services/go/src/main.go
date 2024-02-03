@@ -2,9 +2,10 @@ package main
 
 // Complete implementation from: https://auth0.com/docs/quickstart/backend/golang/interactive
 import (
-	middleware "auth_middleware"
 	"log"
 	"net/http"
+
+	"github.com/MGTheTrain/iam-with-auth0-sample/backend-services/go/middleware"
 
 	jwtmiddleware "github.com/auth0/go-jwt-middleware/v2"
 	"github.com/auth0/go-jwt-middleware/v2/validator"

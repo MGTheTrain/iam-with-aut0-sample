@@ -1,5 +1,5 @@
 // Complete implementation from: https://auth0.com/docs/quickstart/backend/golang/interactive
-package auth_middleware
+package middleware
 
 import (
 	"context"

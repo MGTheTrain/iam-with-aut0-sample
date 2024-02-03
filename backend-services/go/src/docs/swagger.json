@@ -1,0 +1,68 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "Simple Service API sample",
+        "title": "Simple Service API",
+        "termsOfService": "http://localhost:3010/swagger/doc.json",
+        "contact": {},
+        "version": "1.0"
+    },
+    "host": "localhost:3010",
+    "basePath": "/api/v1/sas",
+    "paths": {
+        "/auth": {
+            "get": {
+                "description": "Hello from a private endpoint! You need to be authenticated to see this.",
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Authenticated Endpoint",
+                "operationId": "auth",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "/public": {
+            "get": {
+                "description": "This route is always accessible.",
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Public Endpoint",
+                "operationId": "public",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "/rbac": {
+            "get": {
+                "description": "Hello from a private RBAC restricted endpoint! You need the read:messages scope to see this.",
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "RBAC restricted Endpoint",
+                "operationId": "rbac restricted",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

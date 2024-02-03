@@ -1,18 +1,21 @@
-// Complete implementation from: https://auth0.com/docs/quickstart/backend/golang/interactive
+// Complete implementation from: https://stackoverflow.com/questions/74822544/how-to-use-auth0-authorisation-with-gin-framework
+
 package middleware
 
 import (
-	"context"
 	"log"
 	"net/http"
 	"net/url"
 	"os"
-	"strings"
 	"time"
+
+	"context"
 
 	jwtmiddleware "github.com/auth0/go-jwt-middleware/v2"
 	"github.com/auth0/go-jwt-middleware/v2/jwks"
 	"github.com/auth0/go-jwt-middleware/v2/validator"
+	"github.com/gin-gonic/gin"
+	adapter "github.com/gwatts/gin-adapter"
 )
 
 // CustomClaims contains custom data we want from the token.
@@ -26,8 +29,7 @@ func (c CustomClaims) Validate(ctx context.Context) error {
 	return nil
 }
 
-// EnsureValidToken is a middleware that will check the validity of our JWT.
-func EnsureValidToken() func(next http.Handler) http.Handler {
+func EnsureValidToken() gin.HandlerFunc {
 	issuerURL, err := url.Parse("https://" + os.Getenv("AUTH0_DOMAIN") + "/")
 	if err != nil {
 		log.Fatalf("Failed to parse the issuer url: %v", err)
@@ -63,20 +65,5 @@ func EnsureValidToken() func(next http.Handler) http.Handler {
 		jwtValidator.ValidateToken,
 		jwtmiddleware.WithErrorHandler(errorHandler),
 	)
-
-	return func(next http.Handler) http.Handler {
-		return middleware.CheckJWT(next)
-	}
-}
-
-// HasScope checks whether our claims have a specific scope.
-func (c CustomClaims) HasScope(expectedScope string) bool {
-	result := strings.Split(c.Scope, " ")
-	for i := range result {
-		if result[i] == expectedScope {
-			return true
-		}
-	}
-
-	return false
+	return adapter.Wrap(middleware.CheckJWT)
 }

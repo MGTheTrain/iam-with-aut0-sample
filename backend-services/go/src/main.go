@@ -1,62 +1,41 @@
 package main
 
-// Complete implementation from: https://auth0.com/docs/quickstart/backend/golang/interactive
 import (
 	"log"
-	"net/http"
 
+	"github.com/MGTheTrain/iam-with-auth0-sample/backend-services/go/controllers"
+	"github.com/MGTheTrain/iam-with-auth0-sample/backend-services/go/docs" // IMPORTANT: Folder with swagger.json, etc. need to be generated via `swag init` -> consider controller which implement endpoint logice, e.g. ./controllers/http_controller.go
 	"github.com/MGTheTrain/iam-with-auth0-sample/backend-services/go/middleware"
 
-	jwtmiddleware "github.com/auth0/go-jwt-middleware/v2"
-	"github.com/auth0/go-jwt-middleware/v2/validator"
+	"github.com/gin-gonic/gin"
 	"github.com/joho/godotenv"
+	swaggerFiles "github.com/swaggo/files"
+	ginSwagger "github.com/swaggo/gin-swagger"
 )
 
+// @title Simple Service API
+// @version 1.0
+// @description Simple Service API sample
+// @termsOfService http://localhost:3010/swagger/doc.json
+// @host localhost:3010
+// @BasePath /api/v1/sas
 func main() {
 	if err := godotenv.Load(); err != nil {
 		log.Fatalf("Error loading the .env file: %v", err)
 	}
 
-	router := http.NewServeMux()
+	router := gin.Default()
 
-	// This route is always accessible.
-	router.Handle("/api/public", http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		w.Header().Set("Content-Type", "application/json")
-		w.WriteHeader(http.StatusOK)
-		w.Write([]byte(`{"message":"Hello from a public endpoint! You don't need to be authenticated to see this."}`))
-	}))
+	// Swagger route
+	docs.SwaggerInfo.Version = "v1"
+	router.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
+	controllers.RegisterPublicApiEndpoints(router)
 
-	// This route is only accessible if the user has a valid access_token.
-	router.Handle("/api/private", middleware.EnsureValidToken()(
-		http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-			w.Header().Set("Content-Type", "application/json")
-			w.WriteHeader(http.StatusOK)
-			w.Write([]byte(`{"message":"Hello from a private endpoint! You need to be authenticated to see this."}`))
-		}),
-	))
-
-	// This route is only accessible if the user has a
-	// valid access_token with the read:messages scope.
-	router.Handle("/api/private-scoped", middleware.EnsureValidToken()(
-		http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-			w.Header().Set("Content-Type", "application/json")
-
-			token := r.Context().Value(jwtmiddleware.ContextKey{}).(*validator.ValidatedClaims)
-
-			claims := token.CustomClaims.(*middleware.CustomClaims)
-			if !claims.HasScope("read:messages") {
-				w.WriteHeader(http.StatusForbidden)
-				w.Write([]byte(`{"message":"Insufficient scope."}`))
-				return
-			}
-
-			w.WriteHeader(http.StatusOK)
-			w.Write([]byte(`{"message":"Hello from a private endpoint! You need to be authenticated to see this."}`))
-		}),
-	))
+	router.Use(middleware.EnsureValidToken())
+	controllers.RegisterPrivateApiEndpoints(router)
 
 	log.Print("Server listening on http://localhost:3010")
-	if err := http.ListenAndServe("0.0.0.0:3010", router); err != nil {
+	if err := router.Run(":3010"); err != nil {
 		log.Fatalf("There was an error with the http server: %v", err)
 	}
 }

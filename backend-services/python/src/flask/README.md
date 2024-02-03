@@ -11,5 +11,5 @@
 python app.py
 ```
 
-Explore the Swagger Web UI in a browser of your preference by entering: `http://localhost:5000`
+Explore the Swagger Web UI in a browser of your preference by entering: `http://localhost:5000/apidocs`
 

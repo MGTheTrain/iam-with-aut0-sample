@@ -4,6 +4,7 @@ from dotenv import load_dotenv, find_dotenv
 from flask import Flask, jsonify
 from authlib.integrations.flask_oauth2 import ResourceProtector
 from validator import Auth0JWTBearerTokenValidator
+from flasgger import Swagger
 
 load_dotenv(find_dotenv())
 
@@ -16,9 +17,54 @@ validator = Auth0JWTBearerTokenValidator(auth0_domain, auth0_api_audience)
 require_auth.register_token_validator(validator)
 app = Flask(__name__)
 
+
+swagger_template = {
+    "swagger": "2.0",
+    "info": {
+        "title": "Sample service API Docs",
+        "description": "API Documentation for Sample service application",
+        "contact": {
+            "responsibleOrganization": "",
+            "responsibleDeveloper": "",
+            "email": "TBD",
+            "url": "TBD",
+        },
+        "termsOfService": "TBD",
+        "version": "1.0"
+    },
+    "basePath": "/api/v1",  
+    "schemes": [
+        "http",
+        "https"
+    ],
+    "securityDefinitions": {
+        "Bearer": {
+            "type": "apiKey",
+            "name": "Authorization",
+            "in": "header",
+            "description": "\
+            JWT Authorization header using the Bearer scheme. Example: \"Authorization: Bearer {token}\""
+        }
+    },
+    "security": [
+        {
+            "Bearer": []
+        }
+    ]
+}
+
+swagger = Swagger(app, template=swagger_template)
+
 @app.route("/api/v1/sas/public")
 def public():
-    """No access token required."""
+    """
+    No access token required.
+
+    ---
+    responses:
+      200:
+        description: Successful response
+    """
     response = (
         "Hello from a public endpoint! You don't need to be"
         " authenticated to see this."
@@ -28,7 +74,14 @@ def public():
 @app.route("/api/v1/sas/auth")
 @require_auth(None)
 def private():
-    """A valid access token is required."""
+    """
+    A valid access token is required.
+
+    ---
+    responses:
+      200:
+        description: Successful response
+    """
     response = (
         "Hello from a private endpoint! You need to be"
         " authenticated to see this."
@@ -38,7 +91,14 @@ def private():
 @app.route("/api/v1/sas/rbac")
 @require_auth("admin:permissions")
 def private_with_rbac():
-    """A valid access token and user role permissions are required."""
+    """
+    A valid access token and user role permissions are required.
+
+    ---
+    responses:
+      200:
+        description: Successful response
+    """
     response = (
         "Hello from a private endpoint! You need to be"
         " authenticated and have a user role permissions of admin:permissions to see"

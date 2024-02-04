@@ -6,6 +6,7 @@
 
 - Install node.js via [package manager](https://nodejs.org/en/download/package-manager) or [download and run installer executables](https://nodejs.org/en) for your target platform
 - Install vue cli: `npm install -g @vue/cli`
+- [Install docker engine](https://docs.docker.com/engine/install/) for your target platform
 
 ### Auth0 objects setup
 

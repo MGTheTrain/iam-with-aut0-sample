@@ -27,7 +27,7 @@ npm run serve
 # Building the docker image
 docker build -t vue-spa-considering-auth0:0.1.0 .
 # Run the docker container
-docker run --rm -p 4200:80 -d vue-spa-considering-auth0:0.1.0  # port needs to match redirect URIs in Auth0
+docker run --rm -p 4200:80 -d vue-spa-considering-auth0:0.1.0  # port needs to match redirect URIs of Auth0 application
 ```
 
 #### Sample Auth0 JWT from SPA in console logs

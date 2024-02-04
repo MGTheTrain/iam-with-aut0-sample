@@ -12,6 +12,16 @@ dotnet run
 
 Explore the Swagger Web UI in a browser of your preference by entering: `http://localhost:5074/swagger`
 
+## Run backend service with docker
+
+```sh
+# Building the docker image
+docker build -t csharp-service-with-auth0:0.1.0 .
+# Run the docker container
+docker run --rm -e "Auth0__Domain=dev-d81cx3ar5jc0hn2z" -e "Auth0__Audience=https://quickstart/api" -p 5001:8080 -d csharp-service-with-auth0:0.1.0 
+```
+
+
 ## Retrieve a bearer token (This only considers authentication and not RBAC)
 
 Go to your configured API in the Auth0 portal and select the `Test` button. 

@@ -41,8 +41,8 @@ func main() {
 	router.Use(middleware.CheckPermissions("admin:permission"))
 	controllers.RegisterPrivateApiEndpointsWithRBAC(router)
 
-	log.Print("Server listening on http://localhost:3010")
-	if err := router.Run(":3010"); err != nil {
+	log.Print("Server listening on http://0.0.0.0:3010")
+	if err := router.Run("0.0.0.0:3010"); err != nil {
 		log.Fatalf("There was an error with the http server: %v", err)
 	}
 }

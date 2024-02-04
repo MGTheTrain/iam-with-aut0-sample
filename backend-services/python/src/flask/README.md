@@ -18,9 +18,9 @@ Explore the Swagger Web UI in a browser of your preference by entering: `http://
 
 ```sh
 # Building the docker image
-docker build -t python-service-with-auth0:0.1.0 .
+docker build -t python-service-considering-auth0:0.1.0 .
 # Run the docker container
-docker run --rm -p 5002:5000 -d python-service-with-auth0:0.1.0 
+docker run --rm -p 5002:5000 -d python-service-considering-auth0:0.1.0 
 ```
 
 Explore the Swagger Web UI in a browser of your preference by entering: `http://localhost:5002/apidocs`

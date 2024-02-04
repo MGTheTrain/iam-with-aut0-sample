@@ -27,7 +27,7 @@ npm run serve
 # Building the docker image
 docker build -t vue-spa-considering-auth0:0.1.0 .
 # Run the docker container
-docker run --rm -p 5003:3010 -d vue-spa-considering-auth0:0.1.0 
+docker run --rm -p 8090:80 -d vue-spa-considering-auth0:0.1.0 
 ```
 
 #### Sample Auth0 JWT from SPA in console logs

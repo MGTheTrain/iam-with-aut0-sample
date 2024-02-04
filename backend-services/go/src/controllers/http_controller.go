@@ -43,17 +43,15 @@ func (rc *HttpController) RBACEndpoint(c *gin.Context) {
 
 func RegisterPrivateApiEndpoints(router *gin.Engine) {
 	httpController := new(HttpController)
+	router.GET("/api/v1/sas/auth", httpController.AuthEndpoint)
+}
 
-	v1 := router.Group("/api/v1/sas")
-
-	v1.GET("/auth", httpController.AuthEndpoint)
-	v1.GET("/rbac", httpController.RBACEndpoint)
+func RegisterPrivateApiEndpointsWithRBAC(router *gin.Engine) {
+	httpController := new(HttpController)
+	router.GET("/api/v1/sas/rbac", httpController.RBACEndpoint)
 }
 
 func RegisterPublicApiEndpoints(router *gin.Engine) {
 	httpController := new(HttpController)
-
-	v1 := router.Group("/api/v1/sas")
-
-	v1.GET("/public", httpController.PublicEndpoint)
+	router.GET("/api/v1/sas/public", httpController.RBACEndpoint)
 }

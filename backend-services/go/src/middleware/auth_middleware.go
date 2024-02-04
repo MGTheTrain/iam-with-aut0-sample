@@ -1,6 +1,8 @@
-// Complete implementation from: https://stackoverflow.com/questions/74822544/how-to-use-auth0-authorisation-with-gin-framework
-
 package middleware
+
+// Essential parts from:
+// - https://stackoverflow.com/questions/74822544/how-to-use-auth0-authorisation-with-gin-framework
+// - https://stackoverflow.com/questions/77608552/how-to-retrieve-permission-from-auth0-jwt-token-using-go-gin
 
 import (
 	"log"
@@ -18,9 +20,19 @@ import (
 	adapter "github.com/gwatts/gin-adapter"
 )
 
-// CustomClaims contains custom data we want from the token.
+// CustomClaims contains custom data we want from the token
 type CustomClaims struct {
-	Scope string `json:"scope"`
+	Permissions []string `json:"permissions"`
+}
+
+func (c CustomClaims) HasPermission(expectedPermission string) bool {
+	for _, permission := range c.Permissions {
+		if permission == expectedPermission {
+			return true
+		}
+	}
+
+	return false
 }
 
 // Validate does nothing for this example, but we need
@@ -58,7 +70,7 @@ func EnsureValidToken() gin.HandlerFunc {
 
 		w.Header().Set("Content-Type", "application/json")
 		w.WriteHeader(http.StatusUnauthorized)
-		w.Write([]byte(`{"message":"Failed to validate JWT."}`))
+		w.Write([]byte(`{"message":"Invalid or no authorization header. Provide Bearer <your access token>"}`))
 	}
 
 	middleware := jwtmiddleware.New(
@@ -66,4 +78,17 @@ func EnsureValidToken() gin.HandlerFunc {
 		jwtmiddleware.WithErrorHandler(errorHandler),
 	)
 	return adapter.Wrap(middleware.CheckJWT)
+}
+
+func CheckPermissions(expectedPermission string) gin.HandlerFunc {
+	return func(context *gin.Context) {
+		token := context.Request.Context().Value(jwtmiddleware.ContextKey{}).(*validator.ValidatedClaims)
+
+		claims := token.CustomClaims.(*CustomClaims)
+
+		if !claims.HasPermission(expectedPermission) {
+			context.AbortWithStatus(403)
+		}
+		context.Next()
+	}
 }

@@ -10,5 +10,6 @@ RUN /bin/sh -c "apk add --no-cache go && \
 FROM alpine:latest
 WORKDIR /app
 COPY --from=builder /app/main .
+COPY --from=builder /app/.env .
 EXPOSE 3010
 ENTRYPOINT ["./main"]

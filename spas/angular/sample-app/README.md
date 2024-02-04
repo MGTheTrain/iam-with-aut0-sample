@@ -14,6 +14,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 - Install node.js via [package manager](https://nodejs.org/en/download/package-manager) or [download and run installer executables](https://nodejs.org/en) for your target platform
 - Install Angular cli: `npm install -g @angular/cli`
+- [Install docker engine](https://docs.docker.com/engine/install/) for your target platform
 
 ### Auth0 objects setup
 
@@ -48,6 +49,19 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+
+## Run backend service with docker
+
+```sh
+# Building the docker image
+docker build -t angular-spa-considering-auth0:0.1.0 .
+# Run the docker container
+docker run --rm -p 4200:80 -d angular-spa-considering-auth0:0.1.0  # port needs to match redirect URIs of Auth0 application
+
+# It should be able to provide the environment variables trough `docker run`. The need of the @types/node npm package in order to make process.env accessible  . We're not considering this here tough. The cdocker run command should be executed the following way then: 
+# docker run --rm -p 4200:80 -e "AUTH0_DOMAIN=dev-d81cx3ar5jc0hn2z.us.auth0.com" -e "AUTH0_CLIENT_ID=N7nDGcMjEwUSSn1RZjhSTPk59zUfWThK" -e "AUTH0_AUDIENCE=https://quickstart/api" -d angular-spa-considering-auth0:0.1.0  # port needs to match redirect URIs of Auth0 application
+
+```
 
 ### Sample Auth0 JWT from SPA in console logs
 

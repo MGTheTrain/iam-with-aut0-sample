@@ -1,9 +1,9 @@
 basePath: /api/v1/sas
-host: localhost:3010
+host: 0.0.0.0:3010
 info:
   contact: {}
   description: Simple Service API sample
-  termsOfService: http://localhost:3010/swagger/doc.json
+  termsOfService: http://0.0.0.0:3010/swagger/doc.json
   title: Simple Service API
   version: "1.0"
 paths:

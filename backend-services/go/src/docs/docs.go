@@ -9,7 +9,7 @@ const docTemplate = `{
     "info": {
         "description": "{{escape .Description}}",
         "title": "{{.Title}}",
-        "termsOfService": "http://localhost:3010/swagger/doc.json",
+        "termsOfService": "http://0.0.0.0:3010/swagger/doc.json",
         "contact": {},
         "version": "{{.Version}}"
     },
@@ -116,7 +116,7 @@ const docTemplate = `{
 // SwaggerInfo holds exported Swagger Info so clients can modify it
 var SwaggerInfo = &swag.Spec{
 	Version:          "1.0",
-	Host:             "localhost:3010",
+	Host:             "0.0.0.0:3010",
 	BasePath:         "/api/v1/sas",
 	Schemes:          []string{"http"},
 	Title:            "Simple Service API",

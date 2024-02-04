@@ -6,11 +6,11 @@
     "info": {
         "description": "Simple Service API sample",
         "title": "Simple Service API",
-        "termsOfService": "http://localhost:3010/swagger/doc.json",
+        "termsOfService": "http://0.0.0.0:3010/swagger/doc.json",
         "contact": {},
         "version": "1.0"
     },
-    "host": "localhost:3010",
+    "host": "0.0.0.0:3010",
     "basePath": "/api/v1/sas",
     "paths": {
         "/auth": {

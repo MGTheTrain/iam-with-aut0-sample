@@ -56,5 +56,5 @@ func RegisterPrivateApiEndpointsWithRBAC(router *gin.Engine) {
 
 func RegisterPublicApiEndpoints(router *gin.Engine) {
 	httpController := new(HttpController)
-	router.GET("/api/v1/sas/public", httpController.RBACEndpoint)
+	router.GET("/api/v1/sas/public", httpController.PublicEndpoint)
 }

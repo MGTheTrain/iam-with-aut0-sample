@@ -2,7 +2,8 @@
 
 ## Prerequisite
 
-[Install latest dotnet SDK](https://dotnet.microsoft.com/en-us/download) for your target platform.
+- [Install latest dotnet SDK](https://dotnet.microsoft.com/en-us/download) for your target platform
+- [Install docker engine](https://docs.docker.com/engine/install/) for your target platform
 
 ## Run backend service with dotnet cli tool
 
@@ -11,6 +12,17 @@ dotnet run
 ```
 
 Explore the Swagger Web UI in a browser of your preference by entering: `http://localhost:5074/swagger`
+
+## Run backend service with docker
+
+```sh
+# Building the docker image
+docker build -t csharp-service-considering-auth0:0.1.0 .
+# Run the docker container
+docker run --rm -e "Auth0__Domain=dev-d81cx3ar5jc0hn2z" -e "Auth0__Audience=https://quickstart/api" -p 5001:8080 -d csharp-service-considering-auth0:0.1.0 
+```
+
+Explore the Swagger Web UI in a browser of your preference by entering: `http://localhost:5001/swagger`
 
 ## Retrieve a bearer token (This only considers authentication and not RBAC)
 

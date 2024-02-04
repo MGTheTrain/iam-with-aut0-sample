@@ -114,4 +114,4 @@ def private_with_rbac():
     return {"message": response}
 
 if __name__ == "__main__":
-    app.run()
+    app.run(host="0.0.0.0")

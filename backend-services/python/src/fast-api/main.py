@@ -24,11 +24,11 @@ def private(auth_result: str = Security(auth.verify)):
     return {"message": response}
 
 @app.get("/api/v1/sas/rbac")
-def private_with_rbac(auth_result: str = Security(auth.verify, scopes=['admin:permissions'])):
+def private_with_rbac(auth_result: str = Security(auth.verify, scopes=['admin:permission'])):
     """A valid access token and user role permissions are required."""
     response = (
         "Hello from a private endpoint! You need to be"
-        " authenticated and have a user role permissions of admin:permissions to see"
+        " authenticated and have a user role permission of admin:permission to see"
         " this."
     )
     return {"message": response}

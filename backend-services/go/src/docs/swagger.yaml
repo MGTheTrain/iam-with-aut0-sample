@@ -1,0 +1,61 @@
+basePath: /api/v1/sas
+host: localhost:3010
+info:
+  contact: {}
+  description: Simple Service API sample
+  termsOfService: http://localhost:3010/swagger/doc.json
+  title: Simple Service API
+  version: "1.0"
+paths:
+  /auth:
+    get:
+      description: Hello from a private endpoint! You need to be authenticated to
+        see this.
+      operationId: auth
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: string
+      security:
+      - ApiKeyAuth: []
+      summary: Authenticated Endpoint
+  /public:
+    get:
+      description: This route is always accessible.
+      operationId: public
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: string
+      security:
+      - ApiKeyAuth: []
+      summary: Public Endpoint
+  /rbac:
+    get:
+      description: Hello from a private RBAC restricted endpoint! You need the read:messages
+        scope to see this.
+      operationId: rbac restricted
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: string
+      security:
+      - ApiKeyAuth: []
+      summary: RBAC restricted Endpoint
+schemes:
+- http
+securityDefinitions:
+  ApiKeyAuth:
+    in: header
+    name: Authorization
+    type: apiKey
+swagger: "2.0"

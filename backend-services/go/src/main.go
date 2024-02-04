@@ -3,9 +3,9 @@ package main
 import (
 	"log"
 
-	"github.com/MGTheTrain/iam-with-auth0-sample/backend-services/go/controllers"
-	"github.com/MGTheTrain/iam-with-auth0-sample/backend-services/go/docs" // IMPORTANT: Folder with swagger.json, etc. need to be generated via `swag init` -> consider controller which implement endpoint logic, e.g. ./controllers/http_controller.go
-	"github.com/MGTheTrain/iam-with-auth0-sample/backend-services/go/middleware"
+	"github.com/MGTheTrain/iam-with-auth0-sample/backend-services/go/src/controllers"
+	"github.com/MGTheTrain/iam-with-auth0-sample/backend-services/go/src/docs" // IMPORTANT: Folder with swagger.json, etc. need to be generated via `swag init` -> consider controller which implement endpoint logic, e.g. ./controllers/http_controller.go
+	"github.com/MGTheTrain/iam-with-auth0-sample/backend-services/go/src/middleware"
 
 	"github.com/gin-gonic/gin"
 	"github.com/joho/godotenv"

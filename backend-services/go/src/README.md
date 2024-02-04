@@ -23,7 +23,7 @@ docker build -t go-service-with-auth0:0.1.0 .
 docker run --rm -p 5003:3010 -d go-service-with-auth0:0.1.0 
 ```
 
-**NOTE**: Currrently there are some CORS related errors when utilizing the Swagger Web UI in a browser of your preference by entering: `http://localhost:5003/swagger`. 
+**NOTE**: Currrently there are some CORS related errors when utilizing the Swagger Web UI for testing HTTP controller endpoints in a browser of your preference by entering: `http://localhost:5003/swagger`. 
 
 ```sh
 Failed to fetch.

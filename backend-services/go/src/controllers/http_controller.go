@@ -24,6 +24,7 @@ func (pc *HttpController) PublicEndpoint(c *gin.Context) {
 // @ID auth
 // @Produce json
 // @Success 200 {object} string
+// @Failure 401 {object} string "Unauthorized. Please provide a valid API key."
 // @Security ApiKeyAuth
 // @Router /auth [get]
 func (ac *HttpController) AuthEndpoint(c *gin.Context) {
@@ -35,6 +36,8 @@ func (ac *HttpController) AuthEndpoint(c *gin.Context) {
 // @ID rbac restricted
 // @Produce json
 // @Success 200 {object} string
+// @Failure 401 {object} string "Unauthorized. Please provide a valid API key."
+// @Failure 403 {object} string "Permission denied."
 // @Security ApiKeyAuth
 // @Router /rbac [get]
 func (rc *HttpController) RBACEndpoint(c *gin.Context) {

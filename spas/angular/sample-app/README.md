@@ -58,7 +58,7 @@ docker build -t angular-spa-considering-auth0:0.1.0 .
 # Run the docker container
 docker run --rm -p 4200:80 -d angular-spa-considering-auth0:0.1.0  # port needs to match redirect URIs of Auth0 application
 
-# It should be able to provide the environment variables trough `docker run`. The need of the @types/node npm package in order to make process.env accessible  . We're not considering this here tough. The cdocker run command should be executed the following way then: 
+# It should be able to provide the environment variables trough `docker run`. There is a need of the @types/node npm package in order to make process.env accessible . We're not considering this here tough. The docker run command should be executed the following way then: 
 # docker run --rm -p 4200:80 -e "AUTH0_DOMAIN=dev-d81cx3ar5jc0hn2z.us.auth0.com" -e "AUTH0_CLIENT_ID=N7nDGcMjEwUSSn1RZjhSTPk59zUfWThK" -e "AUTH0_AUDIENCE=https://quickstart/api" -d angular-spa-considering-auth0:0.1.0  # port needs to match redirect URIs of Auth0 application
 
 ```

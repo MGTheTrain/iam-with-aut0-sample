@@ -2,8 +2,8 @@
 
 ## Prerequisite
 
-- [Install latest dotnet SDK](https://dotnet.microsoft.com/en-us/download) for your target platform.
-- [Install docker engine](https://docs.docker.com/engine/install/)
+- [Install latest dotnet SDK](https://dotnet.microsoft.com/en-us/download) for your target platform
+- [Install docker engine](https://docs.docker.com/engine/install/) for your target platform
 
 ## Run backend service with dotnet cli tool
 

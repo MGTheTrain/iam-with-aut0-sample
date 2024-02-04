@@ -21,7 +21,7 @@ namespace SampleService.Controllers
         public IActionResult PublicEndpoint()
         {
             _logger.LogInformation("Public endpoint accessed");
-            return Ok("This is a public endpoint");
+            return Ok(new { message = "This is a public endpoint" });
         }
 
         [HttpGet("rbac")]
@@ -32,7 +32,7 @@ namespace SampleService.Controllers
         public IActionResult PrivateEndpointConsideringRBAC()
         {
             _logger.LogInformation("Private endpoint only considering JWTs from and audience for authentication and RBAC");
-            return Ok("This is a private endpoint only considering JWTs from and audience for authentication and RBAC");
+            return Ok(new { message = "This is a private endpoint only considering JWTs from and audience for authentication and RBAC" });
         }
 
         [HttpGet("auth")]
@@ -42,7 +42,7 @@ namespace SampleService.Controllers
         public IActionResult PrivateEndpoint()
         {
             _logger.LogInformation("Private endpoint only considering JWTs from and audience for authentication");
-            return Ok("This is a private endpoint only considering JWTs from and audience for authentication");
+            return Ok(new { message = "This is a private endpoint only considering JWTs from and audience for authentication" });
         }
     }
 }

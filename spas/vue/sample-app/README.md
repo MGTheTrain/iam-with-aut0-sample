@@ -21,6 +21,15 @@ npm install
 npm run serve
 ```
 
+### Run backend service with docker
+
+```sh
+# Building the docker image
+docker build -t vue-spa-considering-auth0:0.1.0 .
+# Run the docker container
+docker run --rm -p 5003:3010 -d vue-spa-considering-auth0:0.1.0 
+```
+
 #### Sample Auth0 JWT from SPA in console logs
 
 Refer to [section `Sample Auth0 JWT from SPA in console logs` in Angular SPA README.md](../../angular/sample-app/README.md).

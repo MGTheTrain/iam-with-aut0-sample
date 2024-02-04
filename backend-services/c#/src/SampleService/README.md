@@ -10,6 +10,8 @@
 dotnet run
 ```
 
+Explore the Swagger Web UI in a browser of your preference by entering: `http://localhost:5074/swagger`
+
 ## Retrieve a bearer token (This only considers authentication and not RBAC)
 
 Go to your configured API in the Auth0 portal and select the `Test` button. 

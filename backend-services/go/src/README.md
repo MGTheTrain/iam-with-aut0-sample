@@ -23,6 +23,21 @@ docker build -t go-service-with-auth0:0.1.0 .
 docker run --rm -p 5003:3010 -d go-service-with-auth0:0.1.0 
 ```
 
-Explore the Swagger Web UI in a browser of your preference by entering: `http://localhost:5003/swagger`
+**NOTE**: Currrently there are some CORS related errors when utilizing the Swagger Web UI in a browser of your preference by entering: `http://localhost:5003/swagger`. 
 
+```sh
+Failed to fetch.
+Possible Reasons:
+
+CORS
+Network Failure
+URL scheme must be "http" or "https" for CORS request.
+```
+
+Consider running the suggested curl command after pushing the `Execute` button for the desired route in Swagger UI, e.g. 
+```sh 
+curl -X 'GET' \
+  'http://localhost:3010/api/v1/sas/public' \
+  -H 'accept: application/json'
+```
 

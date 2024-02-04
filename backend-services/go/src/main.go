@@ -7,6 +7,7 @@ import (
 	"github.com/MGTheTrain/iam-with-auth0-sample/backend-services/go/src/docs" // IMPORTANT: Folder with swagger.json, etc. need to be generated via `swag init` -> consider controller which implement endpoint logic, e.g. ./controllers/http_controller.go
 	"github.com/MGTheTrain/iam-with-auth0-sample/backend-services/go/src/middleware"
 
+	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 	"github.com/joho/godotenv"
 	swaggerFiles "github.com/swaggo/files"
@@ -16,8 +17,8 @@ import (
 // @title Simple Service API
 // @version 1.0
 // @description Simple Service API sample
-// @termsOfService http://localhost:3010/swagger/doc.json
-// @host localhost:3010
+// @termsOfService http://0.0.0.0:3010/swagger/doc.json
+// @host 0.0.0.0:3010
 // @BasePath /api/v1/sas
 // @schemes http
 // @securityDefinitions.apiKey ApiKeyAuth
@@ -29,6 +30,7 @@ func main() {
 	}
 
 	router := gin.Default()
+	router.Use(cors.Default())
 
 	// Swagger route
 	docs.SwaggerInfo.Version = "v1"

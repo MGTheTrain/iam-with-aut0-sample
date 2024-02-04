@@ -6,6 +6,7 @@ require (
 	github.com/MGTheTrain/iam-with-auth0-sample/backend-services/go/src/controllers v0.0.0-20240204130525-73a606dafa00
 	github.com/MGTheTrain/iam-with-auth0-sample/backend-services/go/src/docs v0.0.0-20240204130525-73a606dafa00
 	github.com/MGTheTrain/iam-with-auth0-sample/backend-services/go/src/middleware v0.0.0-20240204130525-73a606dafa00
+	github.com/gin-contrib/cors v1.5.0
 	github.com/gin-gonic/gin v1.9.1
 	github.com/joho/godotenv v1.5.1
 	github.com/swaggo/files v1.0.1

@@ -56,7 +56,7 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The appli
 # Building the docker image
 docker build -t angular-spa-considering-auth0:0.1.0 .
 # Run the docker container
-docker run --rm -p 4200:80 -d angular-spa-considering-auth0:0.1.0  # port needs to match redirect URIs of Auth0 application
+docker run --rm -p 4200:80 -e "AUTH0_DOMAIN=dev-d81cx3ar5jc0hn2z.us.auth0.com" -e "AUTH0_CLIENT_ID=N7nDGcMjEwUSSn1RZjhSTPk59zUfWThK" -e "AUTH0_AUDIENCE=https://quickstart/api" -d angular-spa-considering-auth0:0.1.0  # port needs to match redirect URIs of Auth0 application
 ```
 
 ### Sample Auth0 JWT from SPA in console logs

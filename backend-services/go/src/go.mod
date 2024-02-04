@@ -1,4 +1,4 @@
-module github.com/MGTheTrain/iam-with-auth0-sample/backend-services/go/src
+module github.com/MGTheTrain/iam-with-auth0-sample
 
 go 1.21.6
 

@@ -35,6 +35,12 @@ const docTemplate = `{
                         "schema": {
                             "type": "string"
                         }
+                    },
+                    "401": {
+                        "description": "Unauthorized. Please provide a valid API key.",
+                        "schema": {
+                            "type": "string"
+                        }
                     }
                 }
             }
@@ -78,6 +84,18 @@ const docTemplate = `{
                 "responses": {
                     "200": {
                         "description": "OK",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized. Please provide a valid API key.",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "403": {
+                        "description": "Permission denied.",
                         "schema": {
                             "type": "string"
                         }

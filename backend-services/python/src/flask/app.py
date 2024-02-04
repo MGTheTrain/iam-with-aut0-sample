@@ -81,12 +81,15 @@ def private():
     responses:
       200:
         description: Successful response
+      401:
+        description: Unauthorized. A valid access token is required.
     """
     response = (
         "Hello from a private endpoint! You need to be"
         " authenticated to see this."
     )
     return {"message": response}
+
 
 @app.route("/api/v1/sas/rbac")
 @require_auth("admin:permission")
@@ -98,6 +101,10 @@ def private_with_rbac():
     responses:
       200:
         description: Successful response
+      401:
+        description: Unauthorized. A valid access token is required.
+      403:
+        description: Permission denied. A valid access token is required.
     """
     response = (
         "Hello from a private endpoint! You need to be"

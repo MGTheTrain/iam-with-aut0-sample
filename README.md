@@ -23,7 +23,7 @@ You must create an **Auth0 account**, and you have the option to choose the [fre
 
 ### Authentication and RBAC in web backend services
 
-- [SampleService - C# ASP .NET Core backend service utilizing Auth0 nuget packages](./backend-services/c%23/src/SampleService/README.md)
+- [SampleService - C# ASP .NET Core backend service utilizing Microsoft JwtBearer nuget packages](./backend-services/c%23/src/SampleService/README.md)
 - [sample-service - Python Flask backend service utilizing Authlib pip packages](./backend-services/python/src/flask/README.md)
 - [sample-service - Go Gin backend service utilizing go-jwt-middleware go package](./backend-services/go/src/README.md)
 

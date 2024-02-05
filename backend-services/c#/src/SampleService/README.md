@@ -1,4 +1,4 @@
-# SampleService - C# ASP .NET Core backend service utilizing Auth0 nuget packages
+# SampleService - C# ASP .NET Core backend service utilizing Microsoft JwtBearer nuget packages
 
 ## Prerequisite
 

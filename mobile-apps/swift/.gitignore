@@ -1,0 +1,41 @@
+# Xcode
+.DS_Store
+build/
+DerivedData/
+/*.xcodeproj
+/*.xcworkspace
+
+# Swift
+*.swiftpm
+*.xccheckout
+
+# CocoaPods
+Pods/
+/*.lock
+/*.xcworkspace
+
+# Carthage
+Carthage/Checkouts
+Carthage/Build
+
+# Compiled Source
+*.rbc
+*.pyc
+*.pyo
+*.pyd
+*.swiftmodule
+*.swiftdoc
+*.hmap
+
+# Package Artifacts
+*.gem
+*.egg
+*.eggs
+*.exe
+*.dll
+*.class
+
+# Misc
+/.idea
+/.vscode
+/.vs

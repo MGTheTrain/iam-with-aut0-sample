@@ -6,16 +6,27 @@
 //
 
 import SwiftUI
+import Auth0
 
 struct ContentView: View {
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Peace")
+            Button("Login", action: self.login)
         }
         .padding()
+    }
+}
+
+extension ContentView {
+    func login() {
+        Auth0.webAuth().start() {
+            result in switch result {
+                case .success(let credentials):
+                    print("Obtained credentials: \(credentials)")
+                case .failure(let error):
+                    print("Failed with: \(error)")
+            }
+        }
     }
 }
 

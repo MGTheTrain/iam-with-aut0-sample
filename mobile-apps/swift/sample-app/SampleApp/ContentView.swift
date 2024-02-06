@@ -9,24 +9,30 @@ import SwiftUI
 import Auth0
 
 struct ContentView: View {
+    @StateObject private var authHandler = AuthHandler()
     var body: some View {
-        VStack {
-            Button("Login", action: self.login)
+        if authHandler.isUserLoggedIn() {
+            VStack {
+                Button("Logout", action: self.logout)
+            }
+            .padding()
         }
-        .padding()
+        else {
+            VStack {
+                Button("Login", action: self.login)
+            }
+            .padding()
+        }
     }
 }
 
 extension ContentView {
     func login() {
-        Auth0.webAuth().audience("https://quickstart/api").start() {
-            result in switch result {
-                case .success(let credentials):
-                    print("Obtained access token: \(credentials.accessToken)")
-                case .failure(let error):
-                    print("Failed with: \(error)")
-            }
-        }
+        self.authHandler.login()
+    }
+    
+    func logout() {
+        self.authHandler.logout()
     }
 }
 

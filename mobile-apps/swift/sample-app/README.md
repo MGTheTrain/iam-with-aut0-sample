@@ -20,7 +20,7 @@
 
 ![Set Auth0 application URIs](./images/set-application-uris.PNG)
 
-Steps 2 to 7 are documented in [the Angular SPA README.md](../../../spas/angular/sample-app/README.md)
+Steps 2 to 6 are documented in [the Angular SPA README.md](../../../spas/angular/sample-app/README.md)
 
 ### Run the mobile application
 

@@ -12,7 +12,7 @@
 
 ### Auth0 objects setup
 
-0. Create in Auth0 **`Native`** application
+0. Create in Auth0 a **`Native`** application
 
 ![Create Auth0 Native application](./images/create-auth0-native-application.PNG)
 

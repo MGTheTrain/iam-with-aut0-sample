@@ -19,10 +19,10 @@ struct ContentView: View {
 
 extension ContentView {
     func login() {
-        Auth0.webAuth().start() {
+        Auth0.webAuth().audience("https://quickstart/api").start() {
             result in switch result {
                 case .success(let credentials):
-                    print("Obtained credentials: \(credentials)")
+                    print("Obtained access token: \(credentials.accessToken)")
                 case .failure(let error):
                     print("Failed with: \(error)")
             }

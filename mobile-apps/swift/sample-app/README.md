@@ -1,4 +1,4 @@
-# Swift SampleApp - OIDC flow in Mobile apps utilizing Auth0 swift package‚
+# Swift SampleApp - OIDC flow in Mobile apps utilizing Auth0 swift package
 
 ## References
 

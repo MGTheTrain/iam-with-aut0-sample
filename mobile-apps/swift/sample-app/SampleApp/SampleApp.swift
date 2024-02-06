@@ -1,5 +1,5 @@
 //
-//  sample_appApp.swift
+//  SampleApp.swift
 //  sample-app
 //
 //  Created by Marvin Gajek on 05.02.24.
@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct sample_appApp: App {
+struct SampleApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()

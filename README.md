@@ -35,5 +35,6 @@ You must create an **Auth0 account**, and you have the option to choose the [fre
 ### OIDC flows in mobile apps
 
 - [Swift SampleApp - OIDC flow in Mobile apps utilizing Auth0 swift package](./mobile-apps/swift/sample-app/README.md)
+- [Kotlin SampleApp - OIDC flow in Mobile apps utilizing Auth0 gradle packages](./mobile-apps/kotlin/README.md)
 
 

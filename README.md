@@ -1,4 +1,4 @@
-# iam-with-auth0-sample
+# iam-with-auth0-poc
 
 
 ## Table of Contents
